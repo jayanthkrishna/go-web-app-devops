@@ -28,3 +28,15 @@ jobs:
 
     - name: Test
       run: go test ./...
+
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Run golintci-lint
+      uses: golangci/golangci-lint-action@v6
+      with:
+        version: v1.56.2
+       
